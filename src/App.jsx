@@ -4,15 +4,15 @@ import TopBar from "./components/TopBar";
 import Weather from "./components/Weather";
 import Footer from "./components/Footer";
 import NotFound from "./components/NotFound";
-import { Route, Router, Routes } from "react-router";
+import { Route, Routes } from "react-router";
 
 function App() {
   return (
-    <div className="d-flex flex-column">
+    <div className="d-flex flex-column min-vh-100">
       <TopBar />
       <div className="flex-fill">
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          <Route path="/Home" element={<HomePage />} />
           <Route path="/weather" element={<Weather />} />
 
           <Route path="*" element={<NotFound />} />
