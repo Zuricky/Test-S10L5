@@ -52,8 +52,8 @@ function Details({ coords, apiKey }) {
                     })}
                   </h5>
                   <img src={`http://openweathermap.org/img/wn/${item.weather[0].icon}@2x.png`} alt="Weather icon" />
-                  <p className="card-text">{item.main.temp}°C</p>
                   <p className="card-text text-capitalize">{item.weather[0].description}</p>
+                  <p className="card-text">{item.main.temp}°C</p>
                 </div>
               </div>
             </div>
