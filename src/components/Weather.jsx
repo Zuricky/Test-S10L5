@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Search } from "react-bootstrap-icons";
+import { Search, Droplet } from "react-bootstrap-icons";
 import Details from "./Details";
 
 function Weather() {
@@ -24,6 +24,7 @@ function Weather() {
         throw new Error("Error retrieving coordinates");
       }
       const geoData = await geoResponse.json();
+      console.log("GeoData:", geoData);
       if (geoData.length === 0) {
         throw new Error("No city found. Try another city name.");
       }
@@ -35,6 +36,7 @@ function Weather() {
         throw new Error("Error retrieving weather data");
       }
       const weatherData = await weatherResponse.json();
+      console.log("Current Weather Data:", weatherData);
       setCurrentWeather(weatherData);
     } catch (err) {
       setError(err.message);
@@ -66,9 +68,12 @@ function Weather() {
         <div className="card mb-4">
           <div className="card-body text-center">
             <h2 className="card-title">{currentWeather.name}</h2>
+            <img src={`http://openweathermap.org/img/wn/${currentWeather.weather[0].icon}@2x.png`} alt="Weather icon" />
             <p className="card-text">Temperature: {currentWeather.main.temp}°C</p>
             <p className="card-text text-capitalize">{currentWeather.weather[0].description}</p>
-            <p className="card-text">Humidity: {currentWeather.main.humidity}%</p>
+            <p className="card-text">
+              Humidity: {currentWeather.main.icon} {currentWeather.main.humidity} %
+            </p>
             <p className="card-text">Wind speed: {currentWeather.wind.speed} m/s</p>
           </div>
         </div>

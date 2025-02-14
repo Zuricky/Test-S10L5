@@ -51,6 +51,7 @@ function Details({ coords, apiKey }) {
                       month: "short",
                     })}
                   </h5>
+                  <img src={`http://openweathermap.org/img/wn/${item.weather[0].icon}@2x.png`} alt="Weather icon" />
                   <p className="card-text">{item.main.temp}°C</p>
                   <p className="card-text text-capitalize">{item.weather[0].description}</p>
                 </div>
