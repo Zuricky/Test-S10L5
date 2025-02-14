@@ -8,20 +8,18 @@ import { Route, Router, Routes } from "react-router";
 
 function App() {
   return (
-    <Router>
-      <div className="d-flex flex-column">
-        <TopBar />
-        <div className="flex-fill">
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/weather" element={<Weather />} />
+    <div className="d-flex flex-column">
+      <TopBar />
+      <div className="flex-fill">
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/weather" element={<Weather />} />
 
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </div>
-        <Footer />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
       </div>
-    </Router>
+      <Footer />
+    </div>
   );
 }
 
