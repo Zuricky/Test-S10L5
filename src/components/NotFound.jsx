@@ -6,7 +6,7 @@ function NotFound() {
     <div className="container my-4 text-center">
       <h1>Error 404, Page not found.</h1>
       <p>The page you are searching does not exist.</p>
-      <Link to="/" className="btn btn-primary">
+      <Link to="/Home" className="btn btn-primary">
         Back to Home
       </Link>
     </div>
