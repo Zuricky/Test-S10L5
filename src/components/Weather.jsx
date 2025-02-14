@@ -74,7 +74,7 @@ function Weather() {
               <ThermometerHalf size={30} className="text-danger" /> {currentWeather.main.temp}°C
             </p>
             <p className="card-text">
-              <DropletFill size={23} className="text-info" /> {currentWeather.main.icon} {currentWeather.main.humidity} %
+              <DropletFill size={23} className="text-info" /> {currentWeather.main.humidity} %
             </p>
             <p className="card-text">
               <Wind size={25} /> {currentWeather.wind.speed} m/s

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { DropletFill, ThermometerHalf, Wind } from "react-bootstrap-icons";
 
 function Details({ coords, apiKey }) {
   const [forecast, setForecast] = useState(null);
@@ -53,7 +54,15 @@ function Details({ coords, apiKey }) {
                   </h5>
                   <img src={`http://openweathermap.org/img/wn/${item.weather[0].icon}@2x.png`} alt="Weather icon" />
                   <p className="card-text text-capitalize">{item.weather[0].description}</p>
-                  <p className="card-text">{item.main.temp}°C</p>
+                  <p className="card-text">
+                    <ThermometerHalf size={30} className="text-danger" /> {item.main.temp}°C
+                  </p>
+                  <p className="card-text">
+                    <DropletFill size={23} className="text-info" /> {item.main.humidity} %
+                  </p>
+                  <p className="card-text">
+                    <Wind size={25} /> {item.wind.speed} m/s
+                  </p>
                 </div>
               </div>
             </div>
